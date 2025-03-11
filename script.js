@@ -43,12 +43,10 @@ addBookButton.addEventListener("click", (event) =>
     const author = addBookFormInputs.item(0).value;
     const title = addBookFormInputs.item(1).value;
     const pagesRead = addBookFormInputs.item(2).value;
-    const bookRead = addBookFormInputs.item(3).value;
+    let bookRead = addBookFormInputs.item(3).checked;
 
     addBookToLibrary(author, title, pagesRead, bookRead);
     // Prevent form from reloading page.
     event.preventDefault();
     displayBooks();
 }); 
-
-// displayBooks();
