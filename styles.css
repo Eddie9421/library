@@ -4,19 +4,26 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {
+.book-container {
     display: grid;
     border: 1px black solid;
     width: 20rem;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 1rem;
+    grid-auto-rows: 2fr;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .container-title {
@@ -24,5 +31,9 @@ body {
     grid-row: 1;
     text-align: center;
     margin: 1rem;
+    border: 1px black solid;
+}
+
+.book {
     border: 1px black solid;
 }

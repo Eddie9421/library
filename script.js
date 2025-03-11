@@ -16,5 +16,17 @@ function addBookToLibrary(title, author, pages, read)
     myLibrary.push(new Book(title, author, pages, read));
 }
 
-addBookToLibrary("Bobby", "Bobby Odenkirk", 234, true);
-addBookToLibrary("Ramen", "joe Mama", 532, false);
+function displayBooks()
+{
+    const booksContainer = document.querySelector(".book-container");
+
+    myLibrary.forEach((book) => {
+        const bookDiv = document.createElement("div");
+        bookDiv.setAttribute("class", "book")
+        bookDiv.textContent = book.infoString;
+
+        booksContainer.appendChild(bookDiv);
+    });
+}
+
+displayBooks();
