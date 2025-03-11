@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    border: 1px black solid;
+    width: 20rem;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1rem;
+}
+
+.container-title {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: center;
+    margin: 1rem;
+    border: 1px black solid;
+}
