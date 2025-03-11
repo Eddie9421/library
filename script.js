@@ -18,9 +18,3 @@ function addBookToLibrary(title, author, pages, read)
 
 addBookToLibrary("Bobby", "Bobby Odenkirk", 234, true);
 addBookToLibrary("Ramen", "joe Mama", 532, false);
-
-for (const book of myLibrary)
-{
-    console.log(book.infoString);
-}
-// crypto.randomUUID()
