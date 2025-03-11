@@ -8,10 +8,10 @@ html {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 1rem;
 }
 
 .book-container {
@@ -20,7 +20,6 @@ body {
     width: 20rem;
     grid-template-rows: 1fr 2fr;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 1rem;
     grid-auto-rows: 2fr;
     gap: 1rem;
     padding: 1rem;
@@ -36,4 +35,29 @@ body {
 
 .book {
     border: 1px black solid;
+}
+
+.sidebar {
+    width: 10rem;
+    border: 1px black solid;
+    padding: 1rem;
+}
+
+.sidebar input {
+    width: 100%;
+}
+
+.sidebar div {
+    text-align: center;
+}
+
+.sidebar button {
+    padding: 0.5rem;
+}
+
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
 }

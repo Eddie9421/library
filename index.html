@@ -10,7 +10,25 @@
 <body>
     <div class="grid-container">
         <aside class="sidebar">
-            
+            <form action="">
+                <div>
+                    <label for="author">Author of book</label>
+                    <input type="text" id="author" required  class="book-input">
+                </div>
+                <div>
+                    <label for="title">Title of book</label>
+                    <input type="text" id="title" required class="book-input">
+                </div>
+                <div>
+                    <label for="pages">Pages read</label>
+                    <input type="number" id="pages" required class="book-input">
+                </div>
+                <div>
+                    <label for="read">Finished reading?</label>
+                    <input type="checkbox" id="read" class="book-input">
+                </div>
+                <button type="submit" class="add-book-button">Add</button>
+            </form>
         </aside>
         <div class="book-container">
             <h2 class="container-title">Books</h2>

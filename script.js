@@ -19,14 +19,29 @@ function addBookToLibrary(title, author, pages, read)
 function displayBooks()
 {
     const booksContainer = document.querySelector(".book-container");
-
-    myLibrary.forEach((book) => {
+    
+    myLibrary.forEach((book) => 
+    {
         const bookDiv = document.createElement("div");
         bookDiv.setAttribute("class", "book")
-        bookDiv.textContent = book.infoString;
+        bookDiv.textContent = book.info();
 
         booksContainer.appendChild(bookDiv);
     });
 }
+
+const addBookButton = document.querySelector(".add-book-button");
+const addBookFormInputs = document.querySelectorAll(".book-input");
+
+addBookButton.addEventListener("click", (event) => 
+{
+    const author = addBookFormInputs.item(0).value;
+    const title = addBookFormInputs.item(1).value;
+    const pagesRead = addBookFormInputs.item(2).value;
+    const bookRead = addBookFormInputs.item(3).value;
+
+    addBookToLibrary(author, title, pagesRead, bookRead);
+    event.preventDefault();
+}); 
 
 displayBooks();
