@@ -48,6 +48,7 @@ addBookButton.addEventListener("click", (event) =>
     addBookToLibrary(author, title, pagesRead, bookRead);
     // Prevent form from reloading page.
     event.preventDefault();
+    displayBooks();
 }); 
 
-displayBooks();
+// displayBooks();
