@@ -19,7 +19,12 @@ function addBookToLibrary(title, author, pages, read)
 function displayBooks()
 {
     const booksContainer = document.querySelector(".book-container");
-    
+    const booksContainerTitle = document.querySelector(".container-title");
+    // Clear all books (and also the title)
+    booksContainer.replaceChildren();
+    // Add back the title
+    booksContainer.appendChild(booksContainerTitle);
+
     myLibrary.forEach((book) => 
     {
         const bookDiv = document.createElement("div");
@@ -41,6 +46,7 @@ addBookButton.addEventListener("click", (event) =>
     const bookRead = addBookFormInputs.item(3).value;
 
     addBookToLibrary(author, title, pagesRead, bookRead);
+    // Prevent form from reloading page.
     event.preventDefault();
 }); 
 
