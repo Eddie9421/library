@@ -35,6 +35,14 @@ html {
 
 .book {
     border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-options {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .sidebar {

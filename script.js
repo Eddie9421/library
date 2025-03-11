@@ -29,8 +29,15 @@ function displayBooks()
     {
         const bookDiv = document.createElement("div");
         bookDiv.setAttribute("class", "book")
+        // Set book info
         bookDiv.textContent = book.info();
 
+        // Create delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.addEventListener("click", () => 
+        {
+            
+        });
         booksContainer.appendChild(bookDiv);
     });
 }
