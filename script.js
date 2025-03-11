@@ -11,12 +11,30 @@ function Book(title, author, pages, read)
     this.id = crypto.randomUUID();
 }
 
+// Adds a book to the library.
 function addBookToLibrary(title, author, pages, read)
 {
     myLibrary.push(new Book(title, author, pages, read));
 }
 
-function displayBooks()
+// Deletes a book from the library with the id passed in.
+const deleteBookWithId = (id) =>
+{
+    let indexOfId = 0;
+    for (let i = 0; i < myLibrary.length; i++)
+    {
+        if (myLibrary.at(i).id === id)
+        {
+            indexOfId = i;
+            break;
+        }
+    }
+
+    myLibrary.splice(indexOfId, 1);
+};
+
+
+function clearBooks()
 {
     const booksContainer = document.querySelector(".book-container");
     const booksContainerTitle = document.querySelector(".container-title");
@@ -24,21 +42,31 @@ function displayBooks()
     booksContainer.replaceChildren();
     // Add back the title
     booksContainer.appendChild(booksContainerTitle);
+}
+
+function displayBooks()
+{
+    const booksContainer = document.querySelector(".book-container");
+    clearBooks();
 
     myLibrary.forEach((book) => 
     {
         const bookDiv = document.createElement("div");
-        bookDiv.setAttribute("class", "book")
+        bookDiv.setAttribute("class", "book");
         // Set book info
         bookDiv.textContent = book.info();
-
-        // Create delete button
-        const deleteBtn = document.createElement("button");
-        deleteBtn.addEventListener("click", () => 
-        {
-            
-        });
+        bookDiv.setAttribute("data-id", book.id);
         booksContainer.appendChild(bookDiv);
+        
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        bookDiv.appendChild(deleteBtn);
+        deleteBtn.addEventListener("click", () =>
+        {
+            deleteBookWithId(bookDiv.dataset.id);
+            // Redisplay books after deleting it from the library.
+            displayBooks();
+        });
     });
 }
 
