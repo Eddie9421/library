@@ -37,6 +37,7 @@ html {
     border: 1px black solid;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .book-options {
@@ -69,4 +70,8 @@ html {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+}
+
+.delete-button {
+    
 }

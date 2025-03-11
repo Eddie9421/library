@@ -60,6 +60,7 @@ function displayBooks()
         
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
+        deleteBtn.classList.add("delete-button")
         bookDiv.appendChild(deleteBtn);
         deleteBtn.addEventListener("click", () =>
         {
@@ -85,3 +86,6 @@ addBookButton.addEventListener("click", (event) =>
     event.preventDefault();
     displayBooks();
 }); 
+
+addBookToLibrary("Harry", "J.k. Michael", 35, true);
+displayBooks();
