@@ -43,7 +43,6 @@ html {
 .book-options {
     display: flex;
     justify-content: flex-end;
-    gap: 1rem;
 }
 
 .sidebar {
@@ -72,6 +71,6 @@ html {
     align-items: center;
 }
 
-.delete-button {
-    
+.book-options > button {
+    width: 3rem;
 }

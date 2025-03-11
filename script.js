@@ -58,16 +58,31 @@ function displayBooks()
         bookDiv.setAttribute("data-id", book.id);
         booksContainer.appendChild(bookDiv);
         
+        const bookOptions = document.createElement("div");
+        bookOptions.classList.add("book-options");
+
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
-        deleteBtn.classList.add("delete-button")
-        bookDiv.appendChild(deleteBtn);
+        bookOptions.appendChild(deleteBtn);
+        
         deleteBtn.addEventListener("click", () =>
         {
             deleteBookWithId(bookDiv.dataset.id);
-            // Redisplay books after deleting it from the library.
+            // Redisplay books after deleting this book from the library.
             displayBooks();
         });
+
+        const readBtn = document.createElement("button");
+        readBtn.textContent = "Read?";
+        bookOptions.appendChild(readBtn);
+        readBtn.addEventListener("click", () =>
+        {
+            book.toggleRead();
+            // Redisplay books after toggling this book's read status.
+            displayBooks();
+        });
+        
+        bookDiv.appendChild(bookOptions);
     });
 }
 
@@ -86,6 +101,13 @@ addBookButton.addEventListener("click", (event) =>
     event.preventDefault();
     displayBooks();
 }); 
+
+Book.prototype.toggleRead = function()
+{
+    this.read = !this.read;
+    // Must reset info string as it does not automatically update itself.
+    this.infoString = `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "already read" : "not read yet"}`;
+};
 
 addBookToLibrary("Harry", "J.k. Michael", 35, true);
 displayBooks();
